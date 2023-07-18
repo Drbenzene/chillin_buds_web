@@ -7,6 +7,7 @@ import { BASE_URL } from "../../../constants";
 import axios from "axios";
 import Loader from "@/components/block-component/loader/loader";
 import EmptyImage from '../../assets/cbd.png';
+import {toast } from 'react-toastify';
 
 const Search = () => {
   const router = useRouter();
@@ -30,7 +31,12 @@ const Search = () => {
     }
 
     async function getData() {
-      const { data } = await axios.post(`${BASE_URL}/products/search`, { search });
+      const { data } = await axios.post(`${BASE_URL}/products/search`, { search }); 
+      if (data.status !== 'success'){
+        toast.error("Something went wrong. Please try again")
+        setLoading(false);
+        return
+      }
       setProducts(data?.products);
       setLoading(false);
       console.log(data, "THE DATAAAA");

@@ -76,24 +76,24 @@ export default function ProductView({ open, setOpen, details }: any) {
                           Product information
                         </h3>
 
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                           <p className="text-lg text-gray-900 sm:text-xl">{product.price}</p>
-                        </div>
+                        </div> */}
 
                         <div className="flex justify-between items-center my-3 flex-wrap">
-                          <p className="p-3 rounded-2xl bg-gray-300 font-bold">
+                          <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                             THC: {details?.thc || '-'}
                           </p>
-                          <p className="p-3 rounded-2xl bg-gray-300 font-bold ">
+                          <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                             CBD: {details?.cbd || '-'}
                           </p>
-                          <p className="p-3 rounded-2xl bg-gray-300 font-bold">
+                          <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                             Terpene %: {details?.terpene_percent || "-"}
                           </p>
 
                           {
                             details?.indica === "TRUE" && (
-                              <p className="p-3 rounded-2xl bg-gray-300 font-bold">
+                              <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                                 Indica
                               </p>
                             )
@@ -101,7 +101,7 @@ export default function ProductView({ open, setOpen, details }: any) {
 
                           {
                             details?.landrace === "TRUE" && (
-                              <p className="p-3 rounded-2xl bg-gray-300 font-bold">
+                              <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                                 Landrace
                               </p>
                             )
@@ -109,7 +109,7 @@ export default function ProductView({ open, setOpen, details }: any) {
 
                           {
                             details?.sativa === "TRUE" && (
-                              <p className="p-3 rounded-2xl bg-gray-300 font-bold">
+                              <p className="p-3 rounded-2xl bg-gray-300 font-bold my-2">
                                 Sativa
                               </p>
                             )
@@ -163,7 +163,42 @@ export default function ProductView({ open, setOpen, details }: any) {
                           )
                         }
 
+{
+                          details?.head_body && (
+                            <div className="mt-4 flex items-center">
+                              <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                              <p className="ml-2 font-medium text-gray-500">Head or Body High: {details.head_body}</p>
+                            </div>
+                          )
+                        }
 
+                        {
+                          details?.originate && (
+                            <div className="mt-4 flex items-center">
+                              <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                              <p className="ml-2 font-medium text-gray-500">Originate: {details.originate}</p>
+                            </div>
+                          )
+                        }
+
+                        
+{
+                          details?.description && (
+                            <div className="mt-4 flex items-center">
+                              <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                              <p className="ml-2 font-medium text-gray-500">Originate: {details.description}</p>
+                            </div>
+                          )
+                        }
+
+{
+                          details?.apetite && (
+                            <div className="mt-4 flex items-center">
+                              <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                              <p className="ml-2 font-medium text-gray-500">Originate: {details.apetite}</p>
+                            </div>
+                          )
+                        }
                       </section>
                     </div>
                   </div>
