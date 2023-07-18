@@ -92,17 +92,25 @@ const handleFileChange = (file: File) => {
               let formatted = {
                 name: reformed?.name,
                 cbd: reformed?.cbd,
-                // terpenes: reformed?.terpenes,
-                // thc: reformed?.thc,
-                // price: reformed?.price,
-                // genetic_makeup: reformed?.genetic_makeup,
-                // terpene_percent: reformed?.terpene_percent,
+                terpenes: reformed?.terpenes,
+                thc: reformed?.thc,
+                price: Number(reformed?.price) || 0,
+                genetic_makeup: reformed?.genetic_makeup,
+                terpene_percent: reformed?.terpene_percent,
                 indica: reformed?.indica,
                 sativa: reformed?.sativa,
                 hybrid: reformed?.hybrid,
                 description: reformed?.description,
-                // image: reformed?.image,
-                // effects: reformed?.image,
+                flavours: reformed?.flavours,
+                effects: reformed?.effects,
+                image: reformed?.image,
+                landrace:reformed.landrace,
+                gassy: reformed.gassy,
+                fruity: reformed.fruity,
+                originate: reformed?.originate,
+                helps: reformed?.helps,
+                apetite: reformed?.apetite,
+                head_body: reformed.head_body
               }
               newData.push(formatted);
             }
@@ -143,6 +151,7 @@ const handleFileChange = (file: File) => {
     setShowDownload(false);
     const rejectedChildren: any = [];
     const data = {products: jsonFromCsv}
+    console.log(data, "THE DATAAAAA")
 
     axios.post(`http://localhost:5000/products/upload`, data)
     .then((res: any) => {

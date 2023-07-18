@@ -21,18 +21,25 @@ function Index() {
     router.push(`/search?query=${search}`,)
   }
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      searchHandler();
+    }
+  };
 
   return (
     <section className="min-h-screen min-w-full bg-con">
       <div className='flex justify-center items-center flex-col py-40 flex-1'>
         <input
           onChange={handleSearch}
+          onKeyDown={handleKeyPress}
           value={search}
           type="text" placeholder="Search" className="w-1/2 h-12 p-5 rounded-lg border-none outline-none focus:ring-2 focus:ring-green-800 focus:ring-opacity-50" />
 
 
 
-        <button className="mt-5 font-bold"
+        <button 
+        className="mt-5 font-bold"
         onClick = {() => searchHandler()}
         >
           <div className="svg-wrapper-1">
