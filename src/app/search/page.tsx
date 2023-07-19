@@ -75,12 +75,14 @@ const Search = () => {
 
         <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
           {products?.map((product: any) => (
-            <div key={product.id} className="group cursor-pointer relative bg-black rounded-xl text-white mb-20"
+            <div key={product.id} className="group cursor-pointer relative bg-black rounded-xl text-white mb-5"
               onClick={() => showHandler(product)}
             >
               <div className="h-40 w-full overflow-hidden bg-gray-200 group-hover:opacity-75">
                 <img
-                  src={product.imageSrc || require('../../assets/leaf.jpg')}
+                  src={product.imageSrc || 
+                    "https://img.freepik.com/free-photo/cannabis-leaves-shoots-placed-shopping-cart_1150-19252.jpg?w=1060&t=st=1689762468~exp=1689763068~hmac=f80c6b5e730eda89d5496f738df7add756cca8a7968f3a5f4a36fc77285093fe"
+                    }
                   alt={product.imageAlt}
                   className="h-full w-full object-cover object-center"
                 />

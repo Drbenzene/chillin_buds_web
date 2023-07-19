@@ -65,7 +65,7 @@ export default function ProductView({ open, setOpen, details }: any) {
                   <div className="grid w-full grid-cols-1 items-start gap-y-8 gap-x-6 sm:grid-cols-12 lg:gap-x-8">
                     <div className="sm:col-span-4 lg:col-span-5">
                       <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100">
-                        <img src={details?.image || require('../../../assets/leaf.jpg') }/>
+                        <img src={details?.image || "https://images.unsplash.com/photo-1612995923001-27d03779d023?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80" }/>
                       </div>
                     </div>
                     <div className="sm:col-span-8 lg:col-span-7">
