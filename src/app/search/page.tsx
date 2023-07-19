@@ -80,7 +80,7 @@ const Search = () => {
             >
               <div className="h-40 w-full overflow-hidden bg-gray-200 group-hover:opacity-75">
                 <img
-                  src={product.imageSrc || "https://images.unsplash.com/photo-1612995923001-27d03779d023?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80"}
+                  src={product.imageSrc || require('../../assets/leaf.jpg')}
                   alt={product.imageAlt}
                   className="h-full w-full object-cover object-center"
                 />
